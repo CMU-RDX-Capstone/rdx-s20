@@ -1,9 +1,11 @@
 Execution Guide:
 
-1.  Run high_value_client_identify/high_value_client_identify.ipynb first to get a list of selected client ids. 
-2.  Name of output file : top_clients.csv
+1.  Identify High Value top_clients
+    - Pre: Use VLOOKUP function within Excel to find all the clients that have business parent and use its parent id to represent the client id.
+    - Run high_value_client_identify/high_value_client_identify.ipynb to get a list of client ids sorted by their number of devices descendingly.
+    - Name of output file : top_clients.csv
 
-3.  Run ETL:
+2.  Run ETL:
     - Pre:
         1. Place the file generated from step(1) along with other input data files.
         2. Ensure all required input files are present. : bus_parent.csv, customer.csv, device.csv, device_location.csv, parent.csv,                  type.csv, event.log.XXXXXXXXXX.csv.gz, top_clients.csv, incidents.csv, incident-device.csv
@@ -12,14 +14,13 @@ Execution Guide:
         5. Set environment variables for spark cluster DB_USER, DB_PASS, DB_HOST, DB_NAME, AWS_ID, AWS_SECRET
     - Run the ETL/etl-with-mapping.scala notebook on a spark cluster
     - Connect to the database instance and run the 01_index.ddl
-    
-    
-4.  For the purpose of utilization analysis:
+
+
+3.  For the purpose of utilization analysis:
     Run data_analysis/Metrics Measurement Grouping.ipynb
     Run data_analysis/resource_utilization_analysis.sql
-    
-5.  For the purpose of machine learning:
+
+4.  For the purpose of machine learning:
     Run XGBoost/Data-preprocess.ipynb to generate training dataset
-    Run XGBoost/XGBoost_Events_2Week.ipynb for the full-feature model 
-    Run XGBoost/XGBoost_Events_2Week_PctFree.ipynb for the PctFree only model 
-    
+    Run XGBoost/XGBoost_Events_2Week.ipynb for the full-feature model
+    Run XGBoost/XGBoost_Events_2Week_PctFree.ipynb for the PctFree only model
