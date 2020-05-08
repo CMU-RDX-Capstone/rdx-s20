@@ -1,8 +1,9 @@
 Execution Guide:
 
-1.  Identify High Value top_clients
+1.  Identify High Value Clients
     - Pre: Use VLOOKUP function within Excel to find all the clients that have business parent and use its parent id to represent the client id.
     - Run high_value_client_identify/high_value_client_identify.ipynb to get a list of client ids sorted by their number of devices descendingly.
+    - Data analysis and select top 150 clients as target clients
     - Name of output file : top_clients.csv
 
 2.  Run ETL:
