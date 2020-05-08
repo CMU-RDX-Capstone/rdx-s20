@@ -1,0 +1,16 @@
+Execution Guide:
+
+Run high_value_client_identify/high_value_client_identify.ipynb first to get a list of selected client ids
+
+Run ETL:
+    //TODO: Amisha
+
+For the purpose of utilization analysis:
+    Run data_analysis/Metrics Measurement Grouping.ipynb
+    Run resource_utilization_analysis.sql
+    
+For the purpose of machine learning:
+    Run XGBoost/Data-preprocess.ipynb to generate training dataset
+    Run XGBoost/XGBoost_Events_2Week.ipynb for the full-feature model 
+    Run XGBoost/XGBoost_Events_2Week_PctFree.ipynb for the PctFree only model 
+    
