@@ -1,3 +1,5 @@
+CREATE INDEX idx_events_map_metric ON events(metric_name);
+
 CREATE INDEX idx_map_time ON event_incident_mapping(core_time_num);
 CREATE INDEX idx_map_metric ON event_incident_mapping(metric_name);
 CREATE INDEX idx_map_evtcd ON event_incident_mapping(event_code);
